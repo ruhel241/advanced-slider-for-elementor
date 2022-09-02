@@ -1,0 +1,58 @@
+.ase-slider-container {
+    background-color: #317EB6;
+    .swiper-wrapper {
+        height: 100% !important;
+    }
+
+    .ase-slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        min-width: 100%;
+        min-height: 100%;
+        .ase-swiper-slide-inner {
+            max-width: 66%;
+            text-align: center;
+            .title, .content, .ase-slide-button {
+                margin-bottom: 30px;
+                color: #fff;
+            }
+            .title {
+                font-size: 35px;
+                font-weight: 700;
+                line-height: 1;
+            }
+            .content {
+                font-size: 17px;
+                line-height: 1.4;
+                font-family: "Roboto Slab", Bangla454, sans-serif;
+            }
+            .ase-slide-button {
+                background: transparent;
+                text-decoration: none;
+                border: 2px solid #fff;
+            }
+
+        }
+    }
+    .swiper-button-next, .swiper-button-prev {
+        background-image: initial;
+        color: hsla(0,0%,93.3%,.9);
+    }
+    .swiper-button-next {
+        right: 25px;
+    }
+    .swiper-button-prev {
+        left: 25px;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: hsla(0,0%,93.3%,.9); 
+    }
+}
