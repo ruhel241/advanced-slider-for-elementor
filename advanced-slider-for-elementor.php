@@ -1,21 +1,24 @@
 <?php
 /**
  * Plugin Name: Advanced Slider for Elementor 
+ * Plugin URI:  https://github.com/ruhel241/advanced-slider-for-elementor
  * Description: Advanced slider for elementor wordpress plugin
- * Plugin URI:  https://github.com/ruhel241/advanced-slider
  * Version:     1.0.0
  * Author:      Md.Ruhel Khan
  * Author URI:  https://profiles.wordpress.org/ruhel241/#content-plugins
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ase
- */
+*/
+
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define('ASE_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 define('ASE_DIR_FILE', __FILE__);
+define('ASE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ADVANCED_SLIDER_LITE', 'advancedSliderLite');
 define('ASE_PLUGIN_VERSION', '1.0.0');
 
@@ -275,7 +278,7 @@ final class ASESliderLite
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'ase' ),
-			'<strong>' . esc_html__( 'Advanced Slider Carousel', 'ase' ) . '</strong>',
+			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'ase' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'ase' ) . '</strong>'
 		);
 
@@ -299,7 +302,7 @@ final class ASESliderLite
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'ase' ),
-			'<strong>' . esc_html__( 'Advanced Slider Carousel', 'ase' ) . '</strong>',
+			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'ase' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'ase' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
@@ -324,7 +327,7 @@ final class ASESliderLite
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'ase' ),
-			'<strong>' . esc_html__( 'Advanced Slider Carousel', 'ase' ) . '</strong>',
+			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'ase' ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'ase' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);
