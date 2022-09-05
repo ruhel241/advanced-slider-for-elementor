@@ -180,8 +180,11 @@ class AdvancedSliderLiteWidget extends Widget_Base
 				'selector' => '{{WRAPPER}} .ase-slider-container',
 				'fields_options' => [
 					'background' => [
-						'default' => 'classic',
+						'default' => 'gradient'
 					],
+					'color' => [
+						'default' => '#6C27EA'
+					]
 				],
 			]
 		);
