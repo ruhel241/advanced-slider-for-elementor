@@ -8,7 +8,7 @@
  * Author URI:  https://profiles.wordpress.org/ruhel241/#content-plugins
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: ase
+ * Text Domain: advanced-slider-for-elementor
 */
 
 
@@ -102,10 +102,8 @@ final class ASESliderLite
 	 * @access public
 	 */
 	public function __construct() {
-
+		
 		add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ] );
-
-		// var_dump(defined(ADVANCEDSLIDERPRO)); die;
 	}
 
 	/**
@@ -121,7 +119,7 @@ final class ASESliderLite
 	 */
 	public function i18n() {
 
-		load_plugin_textdomain( 'ase' );
+		load_plugin_textdomain( 'advanced-slider-for-elementor' );
 	}
 
 	/**
@@ -145,7 +143,7 @@ final class ASESliderLite
 		
 		if (defined('ASEPRO_DIR_FILE')) {
 			if (!class_exists(AdvancedSliderPro\Services\AdvancedSliderWidgetPro::class)) {
-				require_once(ABSPATH.'/wp-content/plugins/advanced-slider-for-elementor-pro/Services/slider-widget.php');
+				require_once(ASEPRO_DIR_PATH.'Services/slider-widget.php');
 			}
 		}
 	}
@@ -158,7 +156,7 @@ final class ASESliderLite
 			?>
 				<div class="notice notice-success is-dismissible">
 					<p>
-						<?php _e('Congratulations! you have installed "Advanced Slider for Elementor" for elementor plugin, Please rating this plugin.', 'ase'); ?>
+						<?php _e('Congratulations! you have installed "Advanced Slider for Elementor" for elementor plugin, Please rating this plugin.', 'advanced-slider-for-elementor'); ?>
 						<em><a href="https://wordpress.org/support/plugin/advanced-slider-for-elementor/reviews/#new-post" target="_blank">Rating</a></em>
 					</p>
 				</div>
@@ -258,7 +256,7 @@ final class ASESliderLite
 
 	public function loadTextDomain()
     {
-        load_plugin_textdomain('ase', false, basename(dirname(__FILE__)) . '/languages');
+        load_plugin_textdomain('advanced-slider-for-elementor', false, basename(dirname(__FILE__)) . '/languages');
 	}
 	
 	
@@ -277,9 +275,9 @@ final class ASESliderLite
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'ase' ),
-			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'ase' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'ase' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'advanced-slider-for-elementor' ),
+			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'advanced-slider-for-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'advanced-slider-for-elementor' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -301,9 +299,9 @@ final class ASESliderLite
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'ase' ),
-			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'ase' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'ase' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'advanced-slider-for-elementor' ),
+			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'advanced-slider-for-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'advanced-slider-for-elementor' ) . '</strong>',
 			 self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -326,9 +324,9 @@ final class ASESliderLite
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'ase' ),
-			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'ase' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'ase' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'advanced-slider-for-elementor' ),
+			'<strong>' . esc_html__( 'Advanced Slider for Elementor', 'advanced-slider-for-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'advanced-slider-for-elementor' ) . '</strong>',
 			 self::MINIMUM_PHP_VERSION
 		);
 

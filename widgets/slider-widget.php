@@ -17,7 +17,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 
     public function get_title() 
     {
-        return esc_html__( 'Advanced Slider', 'ase' );
+        return esc_html__( 'Advanced Slider', 'advanced-slider-for-elementor' );
     }
     
 
@@ -27,7 +27,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
     }
 
     public function get_keywords() {
-		return ['slide', 'carousel', 'image', 'title', 'slider', 'ase'];
+		return ['slide', 'carousel', 'image', 'title', 'slider', 'advanced-slider-for-elementor'];
 	}
 
     public function get_categories()
@@ -40,7 +40,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->start_controls_section(
 			'ase_widget_content_section',
 			[
-				'label' => esc_html__( 'Slider', 'ase' ),
+				'label' => esc_html__( 'Slider', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
         );
@@ -51,7 +51,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 
         $repeater->add_control(
             'ase_image', [
-                'label' => esc_html__( 'Choose Image', 'ase' ),
+                'label' => esc_html__( 'Choose Image', 'advanced-slider-for-elementor' ),
                 'type' => Controls_Manager::MEDIA,
                 // 'default' => [
 				// 	'url' => Utils::get_placeholder_image_src(),
@@ -61,27 +61,27 @@ class AdvancedSliderLiteWidget extends Widget_Base
 
         $repeater->add_control(
             'ase_title', [
-                'label' => esc_html__( 'Title', 'ase' ),
+                'label' => esc_html__( 'Title', 'advanced-slider-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Slider 1 Heading' , 'ase' ),
+                'default' => esc_html__( 'Slider 1 Heading' , 'advanced-slider-for-elementor' ),
                 'label_block' => true,
             ]
         );
 
         $repeater->add_control(
             'ase_content', [
-                'label' => esc_html__( 'Content', 'ase' ),
+                'label' => esc_html__( 'Content', 'advanced-slider-for-elementor' ),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio' , 'ase' ),
+                'default' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio' , 'advanced-slider-for-elementor' ),
                 'label_block' => true,
             ]
         );
 
         $repeater->add_control(
             'ase_button_text', [
-                'label' => esc_html__( 'Button', 'ase' ),
+                'label' => esc_html__( 'Button', 'advanced-slider-for-elementor' ),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Click Here' , 'ase' ),
+                'default' => esc_html__( 'Click Here' , 'advanced-slider-for-elementor' ),
                 'label_block' => true,
             ]
         );
@@ -89,7 +89,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $repeater->add_control(
             'ase_button_url',
             [
-                'label'   => esc_html__( 'Button URL', 'ase' ),
+                'label'   => esc_html__( 'Button URL', 'advanced-slider-for-elementor' ),
                 'type'    => Controls_Manager::URL,
                 'dynamic'=> [
                     'active'  => true,
@@ -104,21 +104,21 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->add_control(
             'ase_list',
             [
-                'label' => esc_html__( 'Slider List', 'ase' ),
+                'label' => esc_html__( 'Slider List', 'advanced-slider-for-elementor' ),
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'ase_title' => esc_html__( 'EASILY CHANGE TITLE, IMAGE, AND DESCRIPTION', 'ase' ),
-                        'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'ase' ),
+                        'ase_title' => esc_html__( 'EASILY CHANGE TITLE, IMAGE, AND DESCRIPTION', 'advanced-slider-for-elementor' ),
+                        'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'advanced-slider-for-elementor' ),
                     ],
                     [
-                        'ase_title' => esc_html__( 'WE SUPPLY YOU  BUILD, WE GUIDE', 'ase' ),
-                        'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'ase' ),
+                        'ase_title' => esc_html__( 'WE SUPPLY YOU  BUILD, WE GUIDE', 'advanced-slider-for-elementor' ),
+                        'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'advanced-slider-for-elementor' ),
                     ],
                     [
-                        'ase_title' => esc_html__( 'BECOME PART OF A GREAT STORY', 'ase' ),
-                        'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'ase' ),
+                        'ase_title' => esc_html__( 'BECOME PART OF A GREAT STORY', 'advanced-slider-for-elementor' ),
+                        'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'advanced-slider-for-elementor' ),
                     ],
                     
                 ],
@@ -132,14 +132,14 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->start_controls_section(
 			'ase_widget_background_style_section',
 			[
-				'label' => esc_html__( 'Additional Options', 'ase' ),
+				'label' => esc_html__( 'Additional Options', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
         );
 
 		$proNotice = [
-			'title' => esc_html__( 'These are pro features', 'ase' ),
-			'message' => esc_html__( 'These are pro features, if you want to enable these features you need to upgrade to the pro version.', 'ase' ),
+			'title' => esc_html__( 'These are pro features', 'advanced-slider-for-elementor' ),
+			'message' => esc_html__( 'These are pro features, if you want to enable these features you need to upgrade to the pro version.', 'advanced-slider-for-elementor' ),
 			'link' => '#'
 		];
 
@@ -166,7 +166,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->start_controls_section(
 			'ase_slider_section',
 			[
-				'label' => esc_html__( 'Slider', 'ase' ),
+				'label' => esc_html__( 'Slider', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -192,7 +192,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->add_responsive_control(
 			'ase_slider_height',
 			[
-				'label' => esc_html__( 'Height', 'ase' ),
+				'label' => esc_html__( 'Height', 'advanced-slider-for-elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -218,7 +218,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->add_responsive_control(
 			'ase_slider_margin',
 			[
-				'label' => esc_html__( 'Margin', 'ase' ),
+				'label' => esc_html__( 'Margin', 'advanced-slider-for-elementor' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -231,7 +231,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->add_responsive_control(
 			'ase_slider_padding',
 			[
-				'label' => esc_html__( 'Padding', 'ase' ),
+				'label' => esc_html__( 'Padding', 'advanced-slider-for-elementor' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
@@ -246,7 +246,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->start_controls_section(
 			'ase_widget_title_style_section',
 			[
-				'label' => esc_html__( 'Title', 'ase' ),
+				'label' => esc_html__( 'Title', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -275,7 +275,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->start_controls_section(
 			'ase_widget_content_style_section',
 			[
-				'label' => esc_html__( 'Content', 'ase' ),
+				'label' => esc_html__( 'Content', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -304,7 +304,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
        	$this->start_controls_section(
 			'ase_section_style_button',
 			[
-				'label' => esc_html__( 'Button', 'ase' ),
+				'label' => esc_html__( 'Button', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -334,7 +334,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 		$this->start_controls_section(
 			'ase_arrows_section',
 			[
-				'label' => esc_html__( 'Arrows Icon', 'ase' ),
+				'label' => esc_html__( 'Arrows Icon', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -363,7 +363,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
         $this->start_controls_section(
 			'ase_dots_section',
 			[
-				'label' => esc_html__( 'Dots Icon', 'ase' ),
+				'label' => esc_html__( 'Dots Icon', 'advanced-slider-for-elementor' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
@@ -402,8 +402,8 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			<div class="ase-nerd-box-message">
 				<?php Utils::print_unescaped_internal_string( $proNotice['message'] ); ?>
 			</div>
-			<a class="ase-nerd-box-link ase-button ase-button-default ase-button-go-pro" href="<?php echo esc_url( ( $proNotice['link'] ) ); ?>" target="_blank">
-				<?php echo esc_html__( 'Upgrade Now', 'ase' ); ?>
+			<a href="<?php echo esc_url( ( $proNotice['link'] ) ); ?>" class="ase-nerd-box-link ase-button ase-button-default ase-button-go-pro" target="_blank">
+				<?php echo esc_html__( 'Upgrade Now', 'advanced-slider-for-elementor' ); ?>
 			</a>
 		</div>
 	<?php
