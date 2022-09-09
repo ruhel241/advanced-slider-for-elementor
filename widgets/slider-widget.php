@@ -140,7 +140,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 		$proNotice = [
 			'title' => esc_html__( 'These are pro features', 'advanced-slider-for-elementor' ),
 			'message' => esc_html__( 'These are pro features, if you want to enable these features you need to upgrade to the pro version.', 'advanced-slider-for-elementor' ),
-			'link' => '#'
+			'link' => "mailto: ruhel241@gmail.com"
 		];
 
 		if (defined('ADVANCED_SLIDER_PRO')) {
@@ -400,8 +400,9 @@ class AdvancedSliderLiteWidget extends Widget_Base
 				<?php Utils::print_unescaped_internal_string( $proNotice['title'] ); ?>
 			</div>
 			<div class="ase-nerd-box-message">
-				<?php Utils::print_unescaped_internal_string( $proNotice['message'] ); ?>
-			</div>
+				<?php Utils::print_unescaped_internal_string( $proNotice['message'] ); ?> <br/><br/>
+				<p style="font-size:10px">[Note: Pro version Comming Soon please contact to email]</p>
+			</div><br/>
 			<a href="<?php echo esc_url( ( $proNotice['link'] ) ); ?>" class="ase-nerd-box-link ase-button ase-button-default ase-button-go-pro" target="_blank">
 				<?php echo esc_html__( 'Upgrade Now', 'advanced-slider-for-elementor' ); ?>
 			</a>

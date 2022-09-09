@@ -10,8 +10,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Advanced Slider for Elementor. You can add background image, title, describes and button, added Unlimited slider. 
-You can customize background image, title, describes and button. Additional options etc.
+Advanced Slider for Elementor. You can add background image, title, content and button, added Unlimited slider. 
+You can customize background, title, describes and button. Additional options etc.
+
+Additional options, Styling title, content, button etc pro features.
 
 == Features ==  
 
@@ -21,9 +23,7 @@ You can customize background image, title, describes and button. Additional opti
 * Enable Dots
 * Slider Speed
 * Unlimited slider
-* Customize Image
 * Added Background color
-* Image Customize
 * Styling options
 * Unlimited Features
 
@@ -42,9 +42,6 @@ Yes it is fully Responsive.
 
 = Can I Add Unlimited Slider =
 Yes you can add unlimited slider.
-
-= Can I Customize Image =
-Yes you can customize image square, round, height, width set.
 
 = Can I add Background color =
 Yes you can add Background color.
@@ -66,6 +63,15 @@ Yes you can style dots, dots size change.
 
 == Screenshots ==
 
+1. Slider Image With Gradient color
+2. Slider Image With Background Image 
+3. Slider Image With Background Image
+4. Slider Image With Gradient color Styling options
+5. Added Unlimited Slider
+6. Additional Options (Pro)
+7. All Styling Options
+8. Slider Styling Options
+9. Title Styling options (pro)
 
 == Changelog ==
 
