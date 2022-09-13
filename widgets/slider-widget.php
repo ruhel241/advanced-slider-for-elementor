@@ -211,11 +211,11 @@ class AdvancedSliderLiteWidget extends Widget_Base
 							[
 								'name' => 'ase_background_overlay',
 								'exclude' => [ 'image' ],
-								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider::before',
+								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider',
 								'fields_options' => [
 									'background' => [
 										'selectors' => [
-											'{{WRAPPER}} .ase-slider-container .ase-slider::before' => 'background-color: {{VALUE}};',
+											'{{WRAPPER}} .ase-slider-container .ase-slider .ase-background-overlay' => 'background-color: {{VALUE}};',
 										],
 									],
 								],
@@ -237,7 +237,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 									],
 								],
 								'selectors' => [
-									'{{WRAPPER}} .ase-slider-container .ase-slider::before' => 'opacity: {{SIZE}};',
+									'{{WRAPPER}} .ase-slider-container .ase-slider .ase-background-overlay' => 'opacity: {{SIZE}};',
 								],
 								'conditions' => [
 									'terms' => [
@@ -255,7 +255,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 							Group_Control_Css_Filter::get_type(),
 							[
 								'name' => 'ase_css_filters',
-								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider::before',
+								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider .ase-background-overlay',
 								'conditions' => [
 									'terms' => [
 										[
@@ -568,8 +568,9 @@ class AdvancedSliderLiteWidget extends Widget_Base
                             $this->add_render_attribute( $sliderButtonURLKey, 'class', ['elementor-button', 'ase-slide-button', 'elementor-size-'.$buttonSize] );
                         }
                 ?>  
-                    <div id="<?php echo 'ase-slider-carousel-'.$item['_id'];?>" class="swiper-slide ase-slider" style="background-image: url(<?php echo esc_url($item['ase_image']['url']); ?>)">
-                        <div class="ase-swiper-slide-inner animated <?php echo esc_attr($contentAnimation); ?>">
+                    <div id="<?php echo 'ase-slider-carousel-'.$item['_id'];?>" class="swiper-slide ase-slider">
+						<div class="ase-background-overlay" style="background-image: url(<?php echo esc_url($item['ase_image']['url']); ?>)"></div>
+						<div class="ase-swiper-slide-inner animated <?php echo esc_attr($contentAnimation); ?>">
                             <?php if ($item['ase_title']): ?>
                                 <h1 class="title">
                                     <?php echo esc_html($item['ase_title']); ?>
