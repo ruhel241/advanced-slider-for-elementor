@@ -15,11 +15,14 @@ import 'swiper/css/bundle';
         new Swiper(sectionId, {
           autoplay: isPro ? $(sectionId).data('autoplay') : false,
           loop: isPro ? $(sectionId).data('loop') : false,
+          autoHeight: isPro ? $(sectionId).data('auto-height') : false,
           effect: isPro ? $(sectionId).data('transition') : 'slide',
           speed: isPro ? $(sectionId).data('slider-speed') : 3000,
           animationDuration: isPro ? $(sectionId).data('content-animation') : 'fadeInRight',
-          autoHeight: true,
-          spaceBetween: 30,
+          spaceBetween: isPro ? $(sectionId).data('space-between') : 30,
+          mousewheel: isPro ? $(sectionId).data('mousewheel') : false,
+          keyboard: isPro ? $(sectionId).data('keyboard') : false,
+          direction: isPro ? $(sectionId).data('direction') : 'horizontal',
           pagination: {
             el: $(sectionId).data('pagination'),
             clickable: true

@@ -6,6 +6,7 @@ use \Elementor\Utils;
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
+use \Elementor\Group_Control_Css_Filter;
 use AdvancedSliderPro\Services\AdvancedSliderWidgetPro;
 
 class AdvancedSliderLiteWidget extends Widget_Base
@@ -170,77 +171,160 @@ class AdvancedSliderLiteWidget extends Widget_Base
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
-
-        $this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'ase_widget_background_color',
-				'types' => [ 'classic', 'gradient' ],
-				'exclude' => [ 'image' ],
-				'selector' => '{{WRAPPER}} .ase-slider-container',
-				'fields_options' => [
-					'background' => [
-						'default' => 'gradient'
+			$this->start_controls_tabs( 'ase_slider_tabs_background' );
+				// Background Start.
+					$this->start_controls_tab(
+						'ase_slider_tab_background',
+						[
+							'label' => esc_html__( 'Background', 'advanced-slider-for-elementor' ),
+						]
+					);
+						$this->add_group_control(
+							Group_Control_Background::get_type(),
+							[
+								'name' => 'ase_widget_background_color',
+								'types' => [ 'classic', 'gradient' ],
+								'exclude' => [ 'image' ],
+								'selector' => '{{WRAPPER}} .ase-slider-container',
+								'fields_options' => [
+									'background' => [
+										'default' => 'gradient'
+									],
+									'color' => [
+										'default' => '#6C27EA'
+									]
+								],
+							]
+						);
+					$this->end_controls_tab();
+				// Background End
+				
+				// Background Overlay Start
+					$this->start_controls_tab(
+						'ase_slider_tab_background_overlay',
+						[
+							'label' => esc_html__( 'Background Overlay', 'advanced-slider-for-elementor' ),
+						]
+					);
+						$this->add_group_control(
+							Group_Control_Background::get_type(),
+							[
+								'name' => 'ase_background_overlay',
+								'exclude' => [ 'image' ],
+								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider::before',
+								'fields_options' => [
+									'background' => [
+										'selectors' => [
+											'{{WRAPPER}} .ase-slider-container .ase-slider::before' => 'background-color: {{VALUE}};',
+										],
+									],
+								],
+							]
+						);
+						
+						$this->add_control(
+							'ase_background_overlay_opacity',
+							[
+								'label' => esc_html__( 'Opacity', 'advanced-slider-for-elementor' ),
+								'type' => Controls_Manager::SLIDER,
+								'default' => [
+									'size' => .5,
+								],
+								'range' => [
+									'px' => [
+										'max' => 1,
+										'step' => 0.01,
+									],
+								],
+								'selectors' => [
+									'{{WRAPPER}} .ase-slider-container .ase-slider::before' => 'opacity: {{SIZE}};',
+								],
+								'conditions' => [
+									'terms' => [
+										[
+											'name' => 'ase_background_overlay_color',
+											'operator' => '!==',
+											'value' => '',
+										],
+									],
+								],
+							]
+						);
+				
+						$this->add_group_control(
+							Group_Control_Css_Filter::get_type(),
+							[
+								'name' => 'ase_css_filters',
+								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider::before',
+								'conditions' => [
+									'terms' => [
+										[
+											'name' => 'ase_background_overlay_color',
+											'operator' => '!==',
+											'value' => '',
+										],
+									],
+								],
+							]
+						);
+				
+					$this->end_controls_tab();
+				// Background Overlay End
+			$this->end_controls_tabs();
+			
+			$this->add_responsive_control(
+				'ase_slider_height',
+				[
+					'label' => esc_html__( 'Height', 'advanced-slider-for-elementor' ),
+					'type' => Controls_Manager::SLIDER,
+					'range' => [
+						'px' => [
+							'min' => 100,
+							'max' => 1000,
+						],
+						'vh' => [
+							'min' => 10,
+							'max' => 100,
+						],
 					],
-					'color' => [
-						'default' => '#6C27EA'
-					]
-				],
-			]
-		);
-        
-        $this->add_responsive_control(
-			'ase_slider_height',
-			[
-				'label' => esc_html__( 'Height', 'advanced-slider-for-elementor' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 100,
-						'max' => 1000,
+					'default' => [
+						'px' => '%',
+						'size' => 400,
 					],
-					'vh' => [
-						'min' => 10,
-						'max' => 100,
+					'size_units' => [ 'px', 'vh', 'em' ],
+					'selectors' => [
+						'{{WRAPPER}} .ase-slider-container' => 'height: {{SIZE}}{{UNIT}};',
 					],
-				],
-				'default' => [
-					'px' => '%',
-					'size' => 400,
-				],
-				'size_units' => [ 'px', 'vh', 'em' ],
-				'selectors' => [
-					'{{WRAPPER}} .ase-slider-container' => 'height: {{SIZE}}{{UNIT}};',
+					'condition' => defined('ADVANCED_SLIDER_PRO') ? ['ase_slider_auto_height' => ''] : [],
+					'separator' => 'before'
 				]
-            ]
-		);
+			);
         
-        $this->add_responsive_control(
-			'ase_slider_margin',
-			[
-				'label' => esc_html__( 'Margin', 'advanced-slider-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .ase-slider-container .ase-slider' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-                'separator' => 'before',
-			]
-        );
+			$this->add_responsive_control(
+				'ase_slider_margin',
+				[
+					'label' => esc_html__( 'Margin', 'advanced-slider-for-elementor' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .ase-slider-container .ase-slider' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+					'separator' => 'before'
+				]
+			);
         
-        $this->add_responsive_control(
-			'ase_slider_padding',
-			[
-				'label' => esc_html__( 'Padding', 'advanced-slider-for-elementor' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .ase-slider-container .ase-slider' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-        $this->end_controls_section();
+			$this->add_responsive_control(
+				'ase_slider_padding',
+				[
+					'label' => esc_html__( 'Padding', 'advanced-slider-for-elementor' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .ase-slider-container .ase-slider' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
+		$this->end_controls_section();
 
     // Title Start
         $this->start_controls_section(
@@ -251,23 +335,22 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			]
         );
 
-		if (defined('ADVANCED_SLIDER_PRO')) {
-			(new AdvancedSliderWidgetPro)->titleOptionsPro($this);
-		} else {
-			$this->add_control(
-				'important_note_2',
-				[
-					'type' => Controls_Manager::RAW_HTML,
-					'raw' => $this->get_pro_notice( [
-						'title' => $proNotice['title'],
-						'message' => $proNotice['message'],
-						'link' => $proNotice['link'],
-						'image-link' => 'text-options.png'
-					] ),
-				]
-			);
-		}
-
+			if (defined('ADVANCED_SLIDER_PRO')) {
+				(new AdvancedSliderWidgetPro)->titleOptionsPro($this);
+			} else {
+				$this->add_control(
+					'important_note_2',
+					[
+						'type' => Controls_Manager::RAW_HTML,
+						'raw' => $this->get_pro_notice( [
+							'title' => $proNotice['title'],
+							'message' => $proNotice['message'],
+							'link' => $proNotice['link'],
+							'image-link' => 'text-options.png'
+						] ),
+					]
+				);
+			}
 		$this->end_controls_section();
     // Title End
 
@@ -414,9 +497,9 @@ class AdvancedSliderLiteWidget extends Widget_Base
 
     protected function render()
     {
-        $settings = $this->get_settings_for_display();
-
-        if ( $settings['ase_list'] ) {
+		$settings = $this->get_settings_for_display();
+		
+		if ( $settings['ase_list'] ) {
             echo $this->html($settings);
         }
     }
@@ -441,23 +524,34 @@ class AdvancedSliderLiteWidget extends Widget_Base
         );
 
 		if (defined('ADVANCED_SLIDER_PRO')) {
+			
 			$loop       = ( $settings['ase_slider_loop'] ===  'yes' ) ? 'true' : 'false';
-			$autoplay   = ( $settings['ase_slider_autoplay'] ===  'yes' ) ? 'true' : 'false';
+			$autoPlay   = ( $settings['ase_slider_autoplay'] ===  'yes' ) ? 'true' : 'false';
+			$autoHeight = ( $settings['ase_slider_auto_height'] ===  'yes' ) ? 'true' : 'false';
 			$showDots   = ( in_array( $settings['navigation'], [ 'dots', 'both' ] ) );
 			$showArrows = ( in_array( $settings['navigation'], [ 'arrows', 'both' ] ) );
 			$transition = $settings['ase_transition'];
 			$slideSpeed = $settings['ase_slider_slide_speed'];
-			$buttonSize = $settings['ase_button_size'];
+			$spaceBetween = $settings['ase_space_between']['size'];
+			$buttonSize   = $settings['ase_button_size'];
+			$mousewheel = ( $settings['ase_mousewheel'] ===  'yes' ) ? 'true' : 'false';
+			$keyboard 	= ( $settings['ase_keyboard'] ===  'yes' ) ? 'true' : 'false';
+			$direction  = $settings['ase_direction'];
 			$contentAnimation = $settings['ase_content_animation'];
 
 			$this->add_render_attribute( 
 				'ase_options', 
 				[   
-					'data-loop' 			 => $loop,
-					'data-autoplay' 		 => $autoplay,
-					'data-transition' 		 => $transition,
-					'data-slider-speed'      => $slideSpeed,
-					'data-content-animation' => $contentAnimation
+					'data-loop' 			=> $loop,
+					'data-autoplay' 		=> $autoPlay,
+					'data-auto-height' 		=> $autoHeight,
+					'data-transition' 		=> $transition,
+					'data-slider-speed'     => $slideSpeed,
+					'data-space-between'    => $spaceBetween,
+					'data-mousewheel'		=> $mousewheel,
+					'data-keyboard'			=> $keyboard,
+					'data-direction'		=> $direction,
+					'data-content-animation'=> $contentAnimation
 				]
 			);
 		}

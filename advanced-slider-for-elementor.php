@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Slider for Elementor 
  * Plugin URI:  https://github.com/ruhel241/advanced-slider-for-elementor
  * Description: Advanced slider for elementor wordpress plugin
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Md.Ruhel Khan
  * Author URI:  https://profiles.wordpress.org/ruhel241/#content-plugins
  * License: GPLv2 or later
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define('ASE_DIR_FILE', __FILE__);
 define('ASE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ADVANCED_SLIDER_LITE', 'advancedSliderLite');
-define('ASE_PLUGIN_VERSION', '1.0.0');
+define('ASE_PLUGIN_VERSION', '1.0.1');
 
 /**
  * Main Advanced Slider Lite Class
@@ -39,7 +39,7 @@ final class ASESliderLite
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 
 	/**
 	 * Minimum Elementor Version
