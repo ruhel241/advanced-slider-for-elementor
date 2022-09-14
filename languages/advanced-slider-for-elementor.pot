@@ -1,0 +1,176 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Slider for Elementor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-14 04:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0.1\n"
+"X-Domain: advanced-slider-for-elementor"
+
+#. 1: Plugin name 2: Elementor
+#: advanced-slider-for-elementor.php:278
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#. 1: Plugin name 2: Elementor 3: Required Elementor version
+#. 1: Plugin name 2: PHP 3: Required PHP version
+#: advanced-slider-for-elementor.php:302 advanced-slider-for-elementor.php:327
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: widgets/slider-widget.php:136
+msgid "Additional Options"
+msgstr ""
+
+#: widgets/slider-widget.php:21
+msgid "Advanced Slider"
+msgstr ""
+
+#. Name of the plugin
+#: advanced-slider-for-elementor.php:279 advanced-slider-for-elementor.php:303
+#: advanced-slider-for-elementor.php:328
+msgid "Advanced Slider for Elementor"
+msgstr ""
+
+#. Description of the plugin
+msgid "Advanced slider for elementor wordpress plugin"
+msgstr ""
+
+#: widgets/slider-widget.php:420
+msgid "Arrows Icon"
+msgstr ""
+
+#: widgets/slider-widget.php:179
+msgid "Background"
+msgstr ""
+
+#: widgets/slider-widget.php:206
+msgid "Background Overlay"
+msgstr ""
+
+#: widgets/slider-widget.php:121
+msgid "BECOME PART OF A GREAT STORY"
+msgstr ""
+
+#: widgets/slider-widget.php:83 widgets/slider-widget.php:390
+msgid "Button"
+msgstr ""
+
+#: widgets/slider-widget.php:93
+msgid "Button URL"
+msgstr ""
+
+#: widgets/slider-widget.php:55
+msgid "Choose Image"
+msgstr ""
+
+#: widgets/slider-widget.php:85
+msgid "Click Here"
+msgstr ""
+
+#: advanced-slider-for-elementor.php:159
+msgid ""
+"Congratulations! you have installed \"Advanced Slider for Elementor\" for "
+"elementor plugin, Please rating this plugin."
+msgstr ""
+
+#: widgets/slider-widget.php:74 widgets/slider-widget.php:361
+msgid "Content"
+msgstr ""
+
+#: widgets/slider-widget.php:449
+msgid "Dots Icon"
+msgstr ""
+
+#: widgets/slider-widget.php:113
+msgid "EASILY CHANGE TITLE, IMAGE, AND DESCRIPTION"
+msgstr ""
+
+#: advanced-slider-for-elementor.php:280 advanced-slider-for-elementor.php:304
+msgid "Elementor"
+msgstr ""
+
+#: widgets/slider-widget.php:278
+msgid "Height"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/ruhel241/advanced-slider-for-elementor"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/ruhel241/#content-plugins"
+msgstr ""
+
+#: widgets/slider-widget.php:76 widgets/slider-widget.php:114
+#: widgets/slider-widget.php:118 widgets/slider-widget.php:122
+msgid ""
+"Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis "
+"et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis "
+"eget, malesuada quis elit. Nulla ac eleifend odio"
+msgstr ""
+
+#: widgets/slider-widget.php:306
+msgid "Margin"
+msgstr ""
+
+#. Author of the plugin
+msgid "Md.Ruhel Khan"
+msgstr ""
+
+#: widgets/slider-widget.php:228
+msgid "Opacity"
+msgstr ""
+
+#: widgets/slider-widget.php:319
+msgid "Padding"
+msgstr ""
+
+#: advanced-slider-for-elementor.php:329
+msgid "PHP"
+msgstr ""
+
+#: widgets/slider-widget.php:44 widgets/slider-widget.php:170
+msgid "Slider"
+msgstr ""
+
+#: widgets/slider-widget.php:67
+msgid "Slider 1 Heading"
+msgstr ""
+
+#: widgets/slider-widget.php:108
+msgid "Slider List"
+msgstr ""
+
+#: widgets/slider-widget.php:142
+msgid "These are pro features"
+msgstr ""
+
+#: widgets/slider-widget.php:143
+msgid ""
+"These are pro features, if you want to enable these features you need to "
+"upgrade to the pro version."
+msgstr ""
+
+#: widgets/slider-widget.php:65 widgets/slider-widget.php:333
+msgid "Title"
+msgstr ""
+
+#: widgets/slider-widget.php:490
+msgid "Upgrade Now"
+msgstr ""
+
+#: widgets/slider-widget.php:117
+msgid "WE SUPPLY YOU  BUILD, WE GUIDE"
+msgstr ""
