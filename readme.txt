@@ -78,7 +78,8 @@ Yes you can style dots, dots size change.
 == Changelog ==
 
 = 1.0.2 =
-* CSS Bug fix
+* CSS Bug fix 
+* Hide Background Overlay (pro)
 
 = 1.0.1 =
 * Added Background Overlay

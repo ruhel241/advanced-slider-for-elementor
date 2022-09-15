@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Slider for Elementor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-14 04:55+0000\n"
+"POT-Creation-Date: 2022-09-15 07:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -29,12 +29,16 @@ msgstr ""
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: widgets/slider-widget.php:136
+#: widgets/slider-widget.php:141
 msgid "Additional Options"
 msgstr ""
 
-#: widgets/slider-widget.php:21
+#: widgets/slider-widget.php:20
 msgid "Advanced Slider"
+msgstr ""
+
+#: widgets/slider-widget.php:122
+msgid "ADVANCED SLIDER FOR ELEMENTOR"
 msgstr ""
 
 #. Name of the plugin
@@ -47,35 +51,35 @@ msgstr ""
 msgid "Advanced slider for elementor wordpress plugin"
 msgstr ""
 
-#: widgets/slider-widget.php:420
+#: widgets/slider-widget.php:374
 msgid "Arrows Icon"
 msgstr ""
 
-#: widgets/slider-widget.php:179
+#: widgets/slider-widget.php:231
 msgid "Background"
 msgstr ""
 
-#: widgets/slider-widget.php:206
+#: widgets/slider-widget.php:259
 msgid "Background Overlay"
 msgstr ""
 
-#: widgets/slider-widget.php:121
+#: widgets/slider-widget.php:126
 msgid "BECOME PART OF A GREAT STORY"
 msgstr ""
 
-#: widgets/slider-widget.php:83 widgets/slider-widget.php:390
+#: widgets/slider-widget.php:88 widgets/slider-widget.php:344
 msgid "Button"
 msgstr ""
 
-#: widgets/slider-widget.php:93
+#: widgets/slider-widget.php:98
 msgid "Button URL"
 msgstr ""
 
-#: widgets/slider-widget.php:55
+#: widgets/slider-widget.php:60
 msgid "Choose Image"
 msgstr ""
 
-#: widgets/slider-widget.php:85
+#: widgets/slider-widget.php:90
 msgid "Click Here"
 msgstr ""
 
@@ -85,15 +89,15 @@ msgid ""
 "elementor plugin, Please rating this plugin."
 msgstr ""
 
-#: widgets/slider-widget.php:74 widgets/slider-widget.php:361
+#: widgets/slider-widget.php:79 widgets/slider-widget.php:315
 msgid "Content"
 msgstr ""
 
-#: widgets/slider-widget.php:449
+#: widgets/slider-widget.php:403
 msgid "Dots Icon"
 msgstr ""
 
-#: widgets/slider-widget.php:113
+#: widgets/slider-widget.php:118
 msgid "EASILY CHANGE TITLE, IMAGE, AND DESCRIPTION"
 msgstr ""
 
@@ -101,7 +105,7 @@ msgstr ""
 msgid "Elementor"
 msgstr ""
 
-#: widgets/slider-widget.php:278
+#: widgets/slider-widget.php:176
 msgid "Height"
 msgstr ""
 
@@ -113,15 +117,15 @@ msgstr ""
 msgid "https://profiles.wordpress.org/ruhel241/#content-plugins"
 msgstr ""
 
-#: widgets/slider-widget.php:76 widgets/slider-widget.php:114
-#: widgets/slider-widget.php:118 widgets/slider-widget.php:122
+#: widgets/slider-widget.php:81 widgets/slider-widget.php:119
+#: widgets/slider-widget.php:123 widgets/slider-widget.php:127
 msgid ""
 "Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis "
 "et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis "
 "eget, malesuada quis elit. Nulla ac eleifend odio"
 msgstr ""
 
-#: widgets/slider-widget.php:306
+#: widgets/slider-widget.php:204
 msgid "Margin"
 msgstr ""
 
@@ -129,11 +133,7 @@ msgstr ""
 msgid "Md.Ruhel Khan"
 msgstr ""
 
-#: widgets/slider-widget.php:228
-msgid "Opacity"
-msgstr ""
-
-#: widgets/slider-widget.php:319
+#: widgets/slider-widget.php:217
 msgid "Padding"
 msgstr ""
 
@@ -141,36 +141,32 @@ msgstr ""
 msgid "PHP"
 msgstr ""
 
-#: widgets/slider-widget.php:44 widgets/slider-widget.php:170
+#: widgets/slider-widget.php:49 widgets/slider-widget.php:169
 msgid "Slider"
 msgstr ""
 
-#: widgets/slider-widget.php:67
+#: widgets/slider-widget.php:72
 msgid "Slider 1 Heading"
 msgstr ""
 
-#: widgets/slider-widget.php:108
+#: widgets/slider-widget.php:113
 msgid "Slider List"
 msgstr ""
 
-#: widgets/slider-widget.php:142
+#: widgets/slider-widget.php:41
 msgid "These are pro features"
 msgstr ""
 
-#: widgets/slider-widget.php:143
+#: widgets/slider-widget.php:42
 msgid ""
 "These are pro features, if you want to enable these features you need to "
 "upgrade to the pro version."
 msgstr ""
 
-#: widgets/slider-widget.php:65 widgets/slider-widget.php:333
+#: widgets/slider-widget.php:70 widgets/slider-widget.php:287
 msgid "Title"
 msgstr ""
 
-#: widgets/slider-widget.php:490
+#: widgets/slider-widget.php:444
 msgid "Upgrade Now"
-msgstr ""
-
-#: widgets/slider-widget.php:117
-msgid "WE SUPPLY YOU  BUILD, WE GUIDE"
 msgstr ""
