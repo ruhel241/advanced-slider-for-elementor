@@ -1,6 +1,6 @@
 === Advanced Slider for Elementor ===
 Contributors: ruhel241
-Tags:  elementor, elementor slider carousel, slider, carousel, elementor widget
+Tags: image slider, carousel, slider, elementor slider, elementor slider carousel,
 Requires at least: 4.5
 Tested up to: 6.0.1
 Requires PHP: 7.0 or higher
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Advanced Slider for Elementor. You can add background image, title, content and button, added Unlimited slider. 
 You can customize background, title, describes and button. Additional options etc.
 
-Additional options, Styling title, content, button etc pro features.
+Additional options, Styling title, content, button, background Overlay etc pro features.
 
 == Features ==  
 
@@ -64,14 +64,16 @@ Yes you can style dots, dots size change.
 == Screenshots ==
 
 1. Slider Image With Gradient color
-2. Slider Image With Background Image 
+2. Slider Image With Background Overlay 
 3. Slider Image With Background Image
 4. Slider Image With Gradient color Styling options
 5. Added Unlimited Slider
 6. Additional Options (Pro)
 7. All Styling Options
 8. Slider Styling Options
-9. Title Styling options (pro)
+9. Background Styling Options
+10. Background Overlay Styling options (pro)
+11. Title Styling options (pro)
 
 == Changelog ==
 

@@ -6,7 +6,6 @@ use \Elementor\Utils;
 use \Elementor\Widget_Base;
 use \Elementor\Controls_Manager;
 use \Elementor\Group_Control_Background;
-use \Elementor\Group_Control_Css_Filter;
 use AdvancedSliderPro\Services\AdvancedSliderWidgetPro;
 
 class AdvancedSliderLiteWidget extends Widget_Base
@@ -38,6 +37,12 @@ class AdvancedSliderLiteWidget extends Widget_Base
    
     protected function register_controls()
     {
+		$proNotice = [
+			'title' => esc_html__( 'These are pro features', 'advanced-slider-for-elementor' ),
+			'message' => esc_html__( 'These are pro features, if you want to enable these features you need to upgrade to the pro version.', 'advanced-slider-for-elementor' ),
+			'link' => "mailto: ruhel241@gmail.com"
+		];
+
         $this->start_controls_section(
 			'ase_widget_content_section',
 			[
@@ -114,7 +119,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
                         'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'advanced-slider-for-elementor' ),
                     ],
                     [
-                        'ase_title' => esc_html__( 'WE SUPPLY YOU  BUILD, WE GUIDE', 'advanced-slider-for-elementor' ),
+                        'ase_title' => esc_html__( 'ADVANCED SLIDER FOR ELEMENTOR', 'advanced-slider-for-elementor' ),
                         'ase_content' => esc_html__( 'Lorem ipsum dolor sit amet, tpat dictum purus, at malesuada tellus convallis et. Aliquam erat volutpat. Vestibulum felis ex, ultrices posuere facilisis eget, malesuada quis elit. Nulla ac eleifend odio', 'advanced-slider-for-elementor' ),
                     ],
                     [
@@ -137,12 +142,6 @@ class AdvancedSliderLiteWidget extends Widget_Base
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
         );
-
-		$proNotice = [
-			'title' => esc_html__( 'These are pro features', 'advanced-slider-for-elementor' ),
-			'message' => esc_html__( 'These are pro features, if you want to enable these features you need to upgrade to the pro version.', 'advanced-slider-for-elementor' ),
-			'link' => "mailto: ruhel241@gmail.com"
-		];
 
 		if (defined('ADVANCED_SLIDER_PRO')) {
 			(new AdvancedSliderWidgetPro)->additionalOptionsPro($this);
@@ -171,107 +170,6 @@ class AdvancedSliderLiteWidget extends Widget_Base
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
         );
-			$this->start_controls_tabs( 'ase_slider_tabs_background' );
-				// Background Start.
-					$this->start_controls_tab(
-						'ase_slider_tab_background',
-						[
-							'label' => esc_html__( 'Background', 'advanced-slider-for-elementor' ),
-						]
-					);
-						$this->add_group_control(
-							Group_Control_Background::get_type(),
-							[
-								'name' => 'ase_widget_background_color',
-								'types' => [ 'classic', 'gradient' ],
-								'exclude' => [ 'image' ],
-								'selector' => '{{WRAPPER}} .ase-slider-container',
-								'fields_options' => [
-									'background' => [
-										'default' => 'gradient'
-									],
-									'color' => [
-										'default' => '#6C27EA'
-									]
-								],
-							]
-						);
-					$this->end_controls_tab();
-				// Background End
-				
-				// Background Overlay Start
-					$this->start_controls_tab(
-						'ase_slider_tab_background_overlay',
-						[
-							'label' => esc_html__( 'Background Overlay', 'advanced-slider-for-elementor' ),
-						]
-					);
-						$this->add_group_control(
-							Group_Control_Background::get_type(),
-							[
-								'name' => 'ase_background_overlay',
-								'exclude' => [ 'image' ],
-								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider',
-								'fields_options' => [
-									'background' => [
-										'selectors' => [
-											'{{WRAPPER}} .ase-slider-container .ase-slider .ase-background-overlay' => 'background-color: {{VALUE}};',
-										],
-									],
-								],
-							]
-						);
-						
-						$this->add_control(
-							'ase_background_overlay_opacity',
-							[
-								'label' => esc_html__( 'Opacity', 'advanced-slider-for-elementor' ),
-								'type' => Controls_Manager::SLIDER,
-								'default' => [
-									'size' => .5,
-								],
-								'range' => [
-									'px' => [
-										'max' => 1,
-										'step' => 0.01,
-									],
-								],
-								'selectors' => [
-									'{{WRAPPER}} .ase-slider-container .ase-slider .ase-background-overlay' => 'opacity: {{SIZE}};',
-								],
-								'conditions' => [
-									'terms' => [
-										[
-											'name' => 'ase_background_overlay_color',
-											'operator' => '!==',
-											'value' => '',
-										],
-									],
-								],
-							]
-						);
-				
-						$this->add_group_control(
-							Group_Control_Css_Filter::get_type(),
-							[
-								'name' => 'ase_css_filters',
-								'selector' => '{{WRAPPER}} .ase-slider-container .ase-slider .ase-background-overlay',
-								'conditions' => [
-									'terms' => [
-										[
-											'name' => 'ase_background_overlay_color',
-											'operator' => '!==',
-											'value' => '',
-										],
-									],
-								],
-							]
-						);
-				
-					$this->end_controls_tab();
-				// Background Overlay End
-			$this->end_controls_tabs();
-			
 			$this->add_responsive_control(
 				'ase_slider_height',
 				[
@@ -296,7 +194,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 						'{{WRAPPER}} .ase-slider-container' => 'height: {{SIZE}}{{UNIT}};',
 					],
 					'condition' => defined('ADVANCED_SLIDER_PRO') ? ['ase_slider_auto_height' => ''] : [],
-					'separator' => 'before'
+					// 'separator' => 'before'
 				]
 			);
         
@@ -309,7 +207,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 					'selectors' => [
 						'{{WRAPPER}} .ase-slider-container .ase-slider' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
-					'separator' => 'before'
+					// 'separator' => 'before'
 				]
 			);
         
@@ -326,6 +224,62 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			);
 		$this->end_controls_section();
 
+	// Background Start
+		$this->start_controls_section(
+			'ase_background_style_section',
+			[
+				'label' => esc_html__( 'Background', 'advanced-slider-for-elementor' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+        );
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'ase_widget_background_color',
+					'types' => [ 'classic', 'gradient' ],
+					'exclude' => [ 'image' ],
+					'selector' => '{{WRAPPER}} .ase-slider-container',
+					'fields_options' => [
+						'background' => [
+							'default' => 'gradient'
+						],
+						'color' => [
+							'default' => '#6C27EA'
+						]
+					],
+				]
+			);
+		$this->end_controls_section();
+    // Background End
+
+	// Background overlay Start
+		$this->start_controls_section(
+			'ase_background_overlay_style_section',
+			[
+				'label' => esc_html__( 'Background Overlay', 'advanced-slider-for-elementor' ),
+				'tab' => Controls_Manager::TAB_STYLE,
+			]
+		);
+			
+			if (defined('ADVANCED_SLIDER_PRO')) {
+				(new AdvancedSliderWidgetPro)->backgroundOverlayPro($this);
+			} else {
+				$this->add_control(
+					'important_notice_overlay',
+					[
+						'type' => Controls_Manager::RAW_HTML,
+						'raw' => $this->get_pro_notice( [
+							'title' => $proNotice['title'],
+							'message' => $proNotice['message'],
+							'link' => $proNotice['link'],
+							'image-link' => 'overlay-options.png'
+						] ),
+					]
+				);
+			}
+		$this->end_controls_section();
+	// Background overlay End
+
     // Title Start
         $this->start_controls_section(
 			'ase_widget_title_style_section',
@@ -339,7 +293,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 				(new AdvancedSliderWidgetPro)->titleOptionsPro($this);
 			} else {
 				$this->add_control(
-					'important_note_2',
+					'important_notice_title',
 					[
 						'type' => Controls_Manager::RAW_HTML,
 						'raw' => $this->get_pro_notice( [
@@ -367,7 +321,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			(new AdvancedSliderWidgetPro)->contentOptionsPro($this);
 		} else {
 			$this->add_control(
-				'important_note_3',
+				'important_notice_content',
 				[
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => $this->get_pro_notice( [
@@ -396,7 +350,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			(new AdvancedSliderWidgetPro)->buttonOptionsPro($this);
 		} else {
 			$this->add_control(
-				'important_note_4',
+				'important_notice_button',
 				[
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => $this->get_pro_notice( [
@@ -426,7 +380,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			(new AdvancedSliderWidgetPro)->arrowsOptionsPro($this);
 		} else {
 			$this->add_control(
-				'important_note_5',
+				'important_notice_arrows',
 				[
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => $this->get_pro_notice( [
@@ -455,7 +409,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			(new AdvancedSliderWidgetPro)->dotsOptionsPro($this);
 		} else {
 			$this->add_control(
-				'important_note_6',
+				'important_notice_dots',
 				[
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => $this->get_pro_notice( [

@@ -6,7 +6,7 @@
  * Version:     1.0.2
  * Author:      Md.Ruhel Khan
  * Author URI:  https://profiles.wordpress.org/ruhel241/#content-plugins
- * License: GPLv2 or later
+ * License: 	GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: advanced-slider-for-elementor
 */
