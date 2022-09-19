@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Advanced Slider for Elementor. You can add background image, title, content and button, added Unlimited slider. 
-You can customize background, title, describes and button. Additional options etc.
+You can customize background, title, content and button. Additional options etc.
 
 Additional options, Styling title, content, button, background Overlay etc pro features.
 

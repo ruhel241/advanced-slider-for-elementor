@@ -511,7 +511,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 		}
     ?>
         <div <?php echo $this->get_render_attribute_string( 'ase_options' ); ?>>
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper ase-<?php echo esc_attr($contentAnimation); ?>">
                 <?php 
                     foreach (  $settings['ase_list'] as $index => $item ): 
                    

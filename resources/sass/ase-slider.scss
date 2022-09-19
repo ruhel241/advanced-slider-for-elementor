@@ -1,4 +1,22 @@
 .ase-slider-container {
+    .swiper-wrapper {
+        &.ase-zoomIn {
+            .swiper-slide-active {
+                .ase-swiper-slide-inner {
+                    opacity: 1;
+                    transform: scale3d(1,1,1);
+                }
+            }
+        }
+        &.ase-fadeInUp, &.ase-fadeInDown, &.ase-fadeInRight, &.ase-fadeInLeft {
+            .swiper-slide-active {
+                .ase-swiper-slide-inner {
+                    opacity: 1;
+                    transform: none
+                }
+            }
+        }
+    }
     .ase-slider {
         display: flex;
         justify-content: center;
@@ -21,6 +39,27 @@
         .ase-swiper-slide-inner {
             max-width: 66%;
             text-align: center;
+            transition: 1.25s;
+            &.zoomIn {
+                opacity: 0;
+                transform: scale3d(.3,.3,.3);
+            }
+            &.fadeInDown {
+                opacity: 0;
+                transform: translate3d(0,-100%,0)
+            }
+            &.fadeInUp {
+                opacity: 0;
+                transform: translate3d(0,100%,0)
+            }
+            &.fadeInRight {
+                opacity: 0;
+                transform: translate3d(100%,0,0)
+            }
+            &.fadeInLeft {
+                opacity: 0;
+                transform: translate3d(-100%,0,0)
+            }
             .title, .content {
                 margin: 0 0 30px 0;
                 color: #fff;
