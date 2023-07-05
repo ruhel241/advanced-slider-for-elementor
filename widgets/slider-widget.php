@@ -464,12 +464,14 @@ class AdvancedSliderLiteWidget extends Widget_Base
 		$buttonSize 	  = 'sm';
 		$showDots 		  = 'dots';
 		$showArrows 	  = 'arrows';
-		$contentAnimation = 'fadeInRight';
+		$titleAnimation   = '';
+		$contentAnimation = '';
+		$btnAnimation 	  = '';
 		
 		$this->add_render_attribute( 
 			'ase_options', 
 			[   
-				'id'    				 => 'ase-slider-carousel-' . intval( $this->get_id() ),
+				'id'    				 => 'ase-slider-' . intval( $this->get_id() ),
                 'class' 				 => ['swiper-container ase-slider-container'],
                 'data-pagination' 		 => '.swiper-pagination',
                 'data-button-next'		 => '.swiper-button-next',
@@ -479,19 +481,21 @@ class AdvancedSliderLiteWidget extends Widget_Base
 
 		if (defined('ADVANCED_SLIDER_PRO')) {
 			
-			$loop       = ( $settings['ase_slider_loop'] ===  'yes' ) ? 'true' : 'false';
-			$autoPlay   = ( $settings['ase_slider_autoplay'] ===  'yes' ) ? 'true' : 'false';
-			$autoHeight = ( $settings['ase_slider_auto_height'] ===  'yes' ) ? 'true' : 'false';
-			$showDots   = ( in_array( $settings['navigation'], [ 'dots', 'both' ] ) );
-			$showArrows = ( in_array( $settings['navigation'], [ 'arrows', 'both' ] ) );
-			$transition = $settings['ase_transition'];
-			$slideSpeed = $settings['ase_slider_slide_speed'];
+			$loop         = ( $settings['ase_slider_loop'] ===  'yes' ) ? 'true' : 'false';
+			$autoPlay     = ( $settings['ase_slider_autoplay'] ===  'yes' ) ? 'true' : 'false';
+			$autoHeight   = ( $settings['ase_slider_auto_height'] ===  'yes' ) ? 'true' : 'false';
+			$showDots     = ( in_array( $settings['navigation'], [ 'dots', 'both' ] ) );
+			$showArrows   = ( in_array( $settings['navigation'], [ 'arrows', 'both' ] ) );
+			$transition   = $settings['ase_transition'];
+			$slideSpeed   = $settings['ase_slider_slide_speed'];
 			$spaceBetween = $settings['ase_space_between']['size'];
 			$buttonSize   = $settings['ase_button_size'];
-			$mousewheel = ( $settings['ase_mousewheel'] ===  'yes' ) ? 'true' : 'false';
-			$keyboard 	= ( $settings['ase_keyboard'] ===  'yes' ) ? 'true' : 'false';
-			$direction  = $settings['ase_direction'];
+			$mousewheel   = ( $settings['ase_mousewheel'] ===  'yes' ) ? 'true' : 'false';
+			$keyboard 	  = ( $settings['ase_keyboard'] ===  'yes' ) ? 'true' : 'false';
+			$direction    = $settings['ase_direction'];
+			$titleAnimation   = $settings['ase_title_animation'];
 			$contentAnimation = $settings['ase_content_animation'];
+			$btnAnimation     = $settings['ase_btn_animation'];
 
 			$this->add_render_attribute( 
 				'ase_options', 
@@ -504,15 +508,15 @@ class AdvancedSliderLiteWidget extends Widget_Base
 					'data-space-between'    => $spaceBetween,
 					'data-mousewheel'		=> $mousewheel,
 					'data-keyboard'			=> $keyboard,
-					'data-direction'		=> $direction,
-					'data-content-animation'=> $contentAnimation
+					'data-direction'		=> $direction
 				]
 			);
 		}
     ?>
-        <div <?php echo $this->get_render_attribute_string( 'ase_options' ); ?>>
-            <div class="swiper-wrapper ase-<?php echo esc_attr($contentAnimation); ?>">
-                <?php 
+      
+		<div <?php echo $this->get_render_attribute_string( 'ase_options' ); ?>>
+			<div class="swiper-wrapper">
+				<?php 
                     foreach (  $settings['ase_list'] as $index => $item ): 
                    
                         $sliderButtonURLKey = $this->get_repeater_setting_key( 'ase_button_url', 'ase_list', $index );
@@ -522,42 +526,46 @@ class AdvancedSliderLiteWidget extends Widget_Base
                             $this->add_render_attribute( $sliderButtonURLKey, 'class', ['elementor-button', 'ase-slide-button', 'elementor-size-'.$buttonSize] );
                         }
                 ?>  
-                    <div id="<?php echo 'ase-slider-carousel-'.$item['_id'];?>" class="swiper-slide ase-slider">
+					<div id="<?php echo 'ase-slider-'.esc_attr($item['_id']);?>" class="swiper-slide ase-slider">
 						<div class="ase-background-overlay" style="background-image: url(<?php echo esc_url($item['ase_image']['url']); ?>)"></div>
-						<div class="ase-swiper-slide-inner animated <?php echo esc_attr($contentAnimation); ?>">
-                            <?php if ($item['ase_title']): ?>
-                                <h1 class="title">
-                                    <?php echo esc_html($item['ase_title']); ?>
-                                </h1>
-                            <?php endif; ?>
-                            
-                            <?php if ($item['ase_content']): ?>
-                                <p class="content">
-                                    <?php echo esc_html($item['ase_content']); ?>
-                                </p>
-                            <?php endif; ?>
+						
+						<div class="ase-swiper-slide-inner">
+							<?php if ($item['ase_title']): ?>
+								<h1 class="title slider-title-<?php echo esc_attr($titleAnimation);?>">
+									<?php echo esc_html($item['ase_title']); ?>
+								</h1>
+							<?php endif; ?>
+							
+							<?php if ($item['ase_content']): ?>
+								<p class="content slider-content-<?php echo esc_attr($contentAnimation);?>">
+									<?php echo esc_html($item['ase_content']); ?>
+								</p>
+							<?php endif; ?>
 
-                            <?php if ($item['ase_button_text'] && $item['ase_button_url']['url']): ?>
-                                <div class="ase-btn">
-                                    <a <?php echo $this->get_render_attribute_string( $sliderButtonURLKey ); ?>>
-                                        <?php echo esc_html($item['ase_button_text']); ?>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+							<?php if ($item['ase_button_text'] && $item['ase_button_url']['url']): ?>
+								<div class="btn slider-btn-<?php echo esc_attr($btnAnimation);?>">
+									<a <?php echo $this->get_render_attribute_string( $sliderButtonURLKey ); ?>>
+										<?php echo esc_html($item['ase_button_text']); ?>
+									</a>
+								</div>
+							<?php endif; ?>
+							
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+			
+			<?php 
+				if ( $showDots ) {
+					echo wp_kses_post('<div class="swiper-pagination"></div>');
+				}
+				if ( $showArrows ) {
+					echo wp_kses_post('<div class="swiper-button-next"></div> <div class="swiper-button-prev"></div>');
+				}
+			?>
+		</div>
 
-            <?php 
-                if ( $showDots ) {
-                    echo wp_kses_post('<div class="swiper-pagination"></div>');
-                }
-                if ( $showArrows ) {
-                    echo wp_kses_post('<div class="swiper-button-next"></div> <div class="swiper-button-prev"></div>');
-                }
-            ?>
-        </div>
+
         <?php
     }
 

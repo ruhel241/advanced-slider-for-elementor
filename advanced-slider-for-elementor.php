@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Advanced Slider for Elementor 
- * Plugin URI:  https://github.com/ruhel241/advanced-slider-for-elementor
+ * Plugin URI:  https://wpcreativeidea.com/advanced-slider-for-elementor/
  * Description: Advanced slider for elementor wordpress plugin
- * Version:     1.0.2
- * Author:      Md.Ruhel Khan
- * Author URI:  https://profiles.wordpress.org/ruhel241/#content-plugins
+ * Version:     1.0.3
+ * Author:      wpcreativeidea
+ * Author URI:  https://wpcreativeidea.com/
  * License: 	GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: advanced-slider-for-elementor
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define('ASE_DIR_FILE', __FILE__);
 define('ASE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ADVANCED_SLIDER_LITE', 'advancedSliderLite');
-define('ASE_PLUGIN_VERSION', '1.0.2');
+define('ASE_PLUGIN_VERSION', '1.0.3');
 
 /**
  * Main Advanced Slider Lite Class
@@ -35,11 +35,11 @@ final class ASESliderLite
 	/**
 	 * Plugin Version
 	 *
-	 * @since 1.0.2
+	 * @since 1.0.3
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.0.2';
+	const VERSION = '1.0.3';
 
 	/**
 	 * Minimum Elementor Version
@@ -212,6 +212,8 @@ final class ASESliderLite
 	 */
 	public function init() {
 		
+		include('load.php');
+
 		$this->loadTextDomain();
 
 		// Add Plugin actions
@@ -233,7 +235,35 @@ final class ASESliderLite
                 'has_pro' => defined('ADVANCED_SLIDER_PRO')
             ));
 		});
+		
+		add_action( 'admin_enqueue_scripts', array($this, 'enqueueScripts') );
+
+		if (defined('ADVANCED_SLIDER_PRO')) {
+			add_action('wp_ajax_ase_pro_lincese_ajax_actions', function() {
+				$licenseController = new AdvancedSliderPro\Classes\LicenseController();
+				$licenseController->handleAjaxCalls();
+			});
+		}
+		
+		add_action('wp_ajax_ase_pro_setup_addons', function() {
+			$setupController = new AdvancedSliderLite\Classes\SetupController();
+			$setupController->handleAjaxCalls();
+		});
+
+		add_action('admin_init', [new AdvancedSliderLite\Classes\AdminPageHandler(), 'initialLoad']);
 	}
+
+
+	public static function enqueueScripts()
+    {
+		wp_enqueue_style( 'ase-admin-css', ASE_PLUGIN_URL.'assets/css/ase-admin.css', array(), ASE_PLUGIN_VERSION);
+		wp_enqueue_script( 'ase-admin-js', ASE_PLUGIN_URL.'assets/js/ase-admin.js', array('jquery'), ASE_PLUGIN_VERSION);
+        wp_localize_script('ase-admin-js', 'aseProVar', [
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'has_pro' => defined('ADVANCED_SLIDER_PRO')
+		]);
+    }
+
 
 	/**
 	 * Init Widgets

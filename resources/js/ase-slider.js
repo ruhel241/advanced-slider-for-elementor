@@ -19,7 +19,6 @@ import 'swiper/css/bundle';
           effect: isPro ? $(sectionId).data('transition') : 'slide',  
           fadeEffect: isPro && $(sectionId).data('transition') == 'fade'  ? { crossFade: true } : { crossFade: false },
           speed: isPro ? $(sectionId).data('slider-speed') : 3000,
-          animationDuration: isPro ? $(sectionId).data('content-animation') : 'fadeInRight',
           spaceBetween: isPro ? $(sectionId).data('space-between') : 30,
           mousewheel: isPro ? $(sectionId).data('mousewheel') : false,
           keyboard: isPro ? $(sectionId).data('keyboard') : false,

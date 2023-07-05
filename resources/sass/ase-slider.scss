@@ -1,4 +1,5 @@
 .ase-slider-container {
+    overflow: hidden;
     .swiper-wrapper {
         &.ase-zoomIn {
             .swiper-slide-active {
@@ -23,7 +24,6 @@
         align-items: center;
         min-width: 100%;
         min-height: 100%;
-        padding: 50px 0px;
         position: relative;
         .ase-background-overlay {
             background-size: cover;
@@ -39,27 +39,6 @@
         .ase-swiper-slide-inner {
             max-width: 66%;
             text-align: center;
-            transition: 1.25s;
-            &.zoomIn {
-                opacity: 0;
-                transform: scale3d(.3,.3,.3);
-            }
-            &.fadeInDown {
-                opacity: 0;
-                transform: translate3d(0,-100%,0)
-            }
-            &.fadeInUp {
-                opacity: 0;
-                transform: translate3d(0,100%,0)
-            }
-            &.fadeInRight {
-                opacity: 0;
-                transform: translate3d(100%,0,0)
-            }
-            &.fadeInLeft {
-                opacity: 0;
-                transform: translate3d(-100%,0,0)
-            }
             .title, .content {
                 margin: 0 0 30px 0;
                 color: #fff;
@@ -74,12 +53,12 @@
                 line-height: 1.4;
                 font-family: "Roboto Slab", Bangla454, sans-serif;
             }
+           
             .ase-slide-button {
                 background: transparent;
                 text-decoration: none;
                 border: 2px solid #fff;
             }
-
         }
     }
     .swiper-button-next, .swiper-button-prev {
@@ -98,5 +77,59 @@
     }
     .swiper-pagination-bullet-active {
         background-color: hsla(0,0%,93.3%,.9); 
+    }
+
+    /****/
+    .swiper-slide-active {
+        /** Title */
+        .slider-title-fadeInUp {
+            animation: fadeInUp 1.5s;
+        }
+        .slider-title-fadeInRight {
+            animation: fadeInRight 1.5s;
+        }
+        .slider-title-fadeInLeft {
+        animation: fadeInLeft 1.5s;
+        }
+        .slider-title-fadeInDown {
+            animation: fadeInDown 1.5s;
+        }
+        .slider-title-zoomIn {
+            animation: zoomIn 2s;
+        }
+        
+        /** content */
+        .slider-content-fadeInUp {
+            animation: fadeInUp 1.5s;
+        }
+        .slider-content-fadeInRight {
+            animation: fadeInRight 1.5s;
+        }
+        .slider-content-fadeInLeft {
+        animation: fadeInLeft 1.5s;
+        }
+        .slider-content-fadeInDown {
+            animation: fadeInDown 1.5s;
+        }
+        .slider-content-zoomIn {
+            animation: zoomIn 2s;
+        }
+        
+        /** Button */
+        .slider-btn-fadeInUp {
+            animation: fadeInUp 1.5s;
+        }
+        .slider-btn-fadeInRight {
+            animation: fadeInRight 1.5s;
+        }
+        .slider-btn-fadeInLeft {
+        animation: fadeInLeft 1.5s;
+        }
+        .slider-btn-fadeInDown {
+            animation: fadeInDown 1.5s;
+        }
+        .slider-btn-zoomIn {
+            animation: zoomIn 2s;
+        }
     }
 }
