@@ -40,7 +40,7 @@ class AdvancedSliderLiteWidget extends Widget_Base
 		$proNotice = [
 			'title' => esc_html__( 'These are pro features', 'advanced-slider-for-elementor' ),
 			'message' => esc_html__( 'These are pro features, if you want to enable these features you need to upgrade to the pro version.', 'advanced-slider-for-elementor' ),
-			'link' => "mailto: ruhel241@gmail.com"
+			'link' => "https://wpcreativeidea.com/slider"
 		];
 
         $this->start_controls_section(
@@ -438,7 +438,6 @@ class AdvancedSliderLiteWidget extends Widget_Base
 			</div>
 			<div class="ase-nerd-box-message">
 				<?php Utils::print_unescaped_internal_string( $proNotice['message'] ); ?> <br/><br/>
-				<p style="font-size:10px">[Note: Pro version Comming Soon please contact to email]</p>
 			</div><br/>
 			<a href="<?php echo esc_url( ( $proNotice['link'] ) ); ?>" class="ase-nerd-box-link ase-button ase-button-default ase-button-go-pro" target="_blank">
 				<?php echo esc_html__( 'Upgrade Now', 'advanced-slider-for-elementor' ); ?>
