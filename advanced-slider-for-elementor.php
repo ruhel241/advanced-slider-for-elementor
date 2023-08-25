@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Slider for Elementor 
  * Plugin URI:  https://wpcreativeidea.com/advanced-slider-for-elementor/
  * Description: Advanced slider for elementor wordpress plugin
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author:      wpcreativeidea
  * Author URI:  https://wpcreativeidea.com/
  * License: 	GPLv2 or later
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 define('ASE_DIR_FILE', __FILE__);
 define('ASE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ADVANCED_SLIDER_LITE', 'advancedSliderLite');
-define('ASE_PLUGIN_VERSION', '1.0.3');
+define('ASE_PLUGIN_VERSION', '1.0.4');
 
 /**
  * Main Advanced Slider Lite Class
@@ -35,11 +35,11 @@ final class ASESliderLite
 	/**
 	 * Plugin Version
 	 *
-	 * @since 1.0.3
+	 * @since 1.0.4
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.0.3';
+	const VERSION = '1.0.4';
 
 	/**
 	 * Minimum Elementor Version

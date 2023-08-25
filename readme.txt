@@ -2,9 +2,9 @@
 Contributors: ruhel241, wpcreativeidea
 Tags: image slider, carousel, slider, elementor slider, elementor slider carousel,
 Requires at least: 4.5
-Tested up to: 6.0.1
+Tested up to: 6.3
 Requires PHP: 7.0 or higher
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ Yes you can style dots, dots size change.
 11. Title Styling options (pro)
 
 == Changelog ==
+
+= 1.0.4 (DATE: AUGUST 25, 2023) = 
+* Latest WordPress Version 6.3 Compatible
 
 = 1.0.3 = 
 * Added Pro License Activate
