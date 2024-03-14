@@ -8,6 +8,12 @@ class SetupController
     public function handleAjaxCalls()
     {
         $route = sanitize_text_field( $_REQUEST['route'] );
+        $nonce = sanitize_text_field( $_REQUEST['nonce'] );
+
+        if ( !(isset($nonce) && wp_verify_nonce($nonce, 'ase_nonce')) ) {
+            return;
+        }
+
         /**
          *  Advaced Testimonial Carousel
          */

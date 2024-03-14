@@ -32,7 +32,8 @@ jQuery(document).ready(function($) {
         getStatusLicense: function() {
             jQuery.post(aseProVar.ajaxurl, {
                 action: 'ase_pro_lincese_ajax_actions', 
-                route: 'get_license_status'
+                route: 'get_license_status',
+                nonce: aseProVar.nonce
             })
                 .then(function(response) {
                     if ( response.data.license_data.status === 'valid' ) {
@@ -60,7 +61,8 @@ jQuery(document).ready(function($) {
                 
                 jQuery.post(aseProVar.ajaxurl, {
                     action: 'ase_pro_lincese_ajax_actions',
-                    route: 'activate_license', 
+                    route: 'activate_license',
+                    nonce: aseProVar.nonce,
                     license_key: jQuery('#ase_license_settings_field').val()
                 })
                     .then(function(response) {
@@ -99,7 +101,8 @@ jQuery(document).ready(function($) {
                 e.preventDefault();
                 jQuery.post(aseProVar.ajaxurl, {
                     action: 'ase_pro_lincese_ajax_actions', 
-                    route: 'deactivated_license'
+                    route: 'deactivated_license',
+                    nonce: aseProVar.nonce
                 })
                     .then(function(response) {
                         $("#asebooster-loading").hide();
@@ -118,12 +121,13 @@ jQuery(document).ready(function($) {
         },
         // Active Plugin 
         installHandler: function() {
-            $('.installAddon').on('click', function(e) {
+            $('.ase-install-addon').on('click', function(e) {
                 // console.log($(this).attr('value'));
                 e.preventDefault();
                 jQuery.post(aseProVar.ajaxurl, {
-                    action: 'ase_pro_setup_addons', 
+                    action: 'ase_pro_setup_addons',
                     route: $(this).attr('value'),
+                    nonce: aseProVar.nonce
                 })
                     .then(function(response) {
                         setTimeout(function() {

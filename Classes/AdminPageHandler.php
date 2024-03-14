@@ -80,7 +80,7 @@ class AdminPageHandler {
 							<div class="btn-box">
 								<?php
 									if (!$value['is_installed']):
-								?>	<a class="btn installAddon" value="<?php echo $value['route']; ?>">
+								?>	<a class="btn ase-install-addon" value="<?php echo $value['route']; ?>">
 										<?php echo $value['action_text']; ?>
 									</a>
 								<?php else: ?>

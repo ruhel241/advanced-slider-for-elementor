@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Slider for Elementor 
  * Plugin URI:  https://wpcreativeidea.com/advanced-slider-for-elementor/
  * Description: Advanced slider for elementor wordpress plugin
- * Version:     1.0.4
+ * Version:     2.0.0
  * Author:      wpcreativeidea
  * Author URI:  https://wpcreativeidea.com/
  * License: 	GPLv2 or later
@@ -20,14 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 define('ASE_DIR_FILE', __FILE__);
 define('ASE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('ADVANCED_SLIDER_LITE', 'advancedSliderLite');
-define('ASE_PLUGIN_VERSION', '1.0.4');
+define('ASE_PLUGIN_VERSION', '2.0.0');
 
 /**
  * Main Advanced Slider Lite Class
  *
  * The main class that initiates and runs the plugin.
  *
- * @since 1.4.0
+ * @since 2.0.0
  */
 final class ASESliderLite
 {
@@ -35,16 +35,16 @@ final class ASESliderLite
 	/**
 	 * Plugin Version
 	 *
-	 * @since 1.0.4
+	 * @since 2.0.0
 	 *
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.0.4';
+	const VERSION = '2.0.0';
 
 	/**
 	 * Minimum Elementor Version
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @var string Minimum Elementor version required to run the plugin.
 	 */
@@ -53,7 +53,7 @@ final class ASESliderLite
 	/**
 	 * Minimum PHP Version
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @var string Minimum PHP version required to run the plugin.
 	 */
@@ -62,7 +62,7 @@ final class ASESliderLite
 	/**
 	 * Instance
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access private
 	 * @static
@@ -77,7 +77,7 @@ final class ASESliderLite
 	 *
 	 * Ensures only one instance of the class is loaded or can be loaded.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 * @static
@@ -97,7 +97,7 @@ final class ASESliderLite
 	/**
 	 * Constructor
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -113,7 +113,7 @@ final class ASESliderLite
 	 *
 	 * Fired by `init` action hook.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -130,7 +130,7 @@ final class ASESliderLite
 	 *
 	 * Fired by `plugins_loaded` action hook.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -170,7 +170,7 @@ final class ASESliderLite
 	 * Checks if the installed version of Elementor meets the plugin's minimum requirement.
 	 * Checks if the installed PHP version meets the plugin's minimum requirement.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -206,7 +206,7 @@ final class ASESliderLite
 	 *
 	 * Fired by `plugins_loaded` action hook.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -260,7 +260,8 @@ final class ASESliderLite
 		wp_enqueue_script( 'ase-admin-js', ASE_PLUGIN_URL.'assets/js/ase-admin.js', array('jquery'), ASE_PLUGIN_VERSION);
         wp_localize_script('ase-admin-js', 'aseProVar', [
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			'has_pro' => defined('ADVANCED_SLIDER_PRO')
+			'has_pro' => defined('ADVANCED_SLIDER_PRO'),
+			'nonce'   => wp_create_nonce('ase_nonce')
 		]);
     }
 
@@ -270,7 +271,7 @@ final class ASESliderLite
 	 *
 	 * Include widgets files and register them
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -295,7 +296,7 @@ final class ASESliderLite
 	 *
 	 * Warning when the site doesn't have Elementor installed or activated.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -319,7 +320,7 @@ final class ASESliderLite
 	 *
 	 * Warning when the site doesn't have a minimum required Elementor version.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
@@ -344,7 +345,7 @@ final class ASESliderLite
 	 *
 	 * Warning when the site doesn't have a minimum required PHP version.
 	 *
-	 * @since 1.4.0
+	 * @since 2.0.0
 	 *
 	 * @access public
 	 */
