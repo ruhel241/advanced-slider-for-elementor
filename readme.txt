@@ -2,15 +2,17 @@
 Contributors: ruhel241, wpcreativeidea
 Tags: image slider, carousel, slider, elementor slider, elementor slider carousel,
 Requires at least: 5.0
-Tested up to: 6.4.3
+Tested up to: 6.7.2
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Advanced Slider For Elementor. You can add background image, title, content and button, added Unlimited slider. 
+
 == Description ==
 
-Advanced Slider for Elementor. You can add background image, title, content and button, added Unlimited slider. 
+Advanced Slider For Elementor. You can add background image, title, content and button, added Unlimited slider. 
 You can customize background, title, content and button. Additional options etc.
 
 Additional options, Styling title, content, button, background Overlay etc pro features.
@@ -76,6 +78,10 @@ Yes you can style dots, dots size change.
 11. Title Styling options (pro)
 
 == Changelog ==
+
+= 2.0.1 (DATE: MARCH 29, 2025) =
+* WordPress Version 6.7.2 Compatible
+* Sanitization issue fix
 
 = 2.0.0 (DATE: MARCH 14, 2024) =
 * Added nonce for Security.

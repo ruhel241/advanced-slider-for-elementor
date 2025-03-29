@@ -23,7 +23,7 @@ class AdminPageHandler {
 				'label' => esc_html__( 'ASE Settings', 'advanced-slider-for-elementor' ),
 				'sections' => [
 					'ase-plugins-section' => [
-						'label' => esc_html__( '', 'advanced-slider-for-elementor' ),
+						'label' => '',
 						'callback' => function() {
 							$this->renderPage();
 						},
@@ -75,20 +75,20 @@ class AdminPageHandler {
 							<div class="image">
 								<img src="<?php echo esc_url( ASE_PLUGIN_URL . 'assets/images/'. $value['logo']); ?>" alt="">
 							</div>
-							<h2> <?php echo $value['title']; ?> </h2>
-							<p><?php echo $value['description']; ?></p>
+							<h2> <?php echo esc_html($value['title']); ?> </h2>
+							<p><?php echo esc_html($value['description']); ?></p>
 							<div class="btn-box">
 								<?php
 									if (!$value['is_installed']):
-								?>	<a class="btn ase-install-addon" value="<?php echo $value['route']; ?>">
-										<?php echo $value['action_text']; ?>
+								?>	<a class="btn ase-install-addon" value="<?php echo esc_attr($value['route']); ?>">
+										<?php echo esc_html($value['action_text']); ?>
 									</a>
 								<?php else: ?>
-									<a href="<?php echo $value['settings_url']; ?>" class="viewInstall" target="_blank">
+									<a href="<?php echo esc_url($value['settings_url']); ?>" class="viewInstall" target="_blank">
 										View Settings
 									</a>
 								<?php endif; ?>
-								<a href="<?php echo $value['upgrade_to_pro_link']; ?>" class="upgrade-to-pro" target="_blank">Upgrade to Pro</a>
+								<a href="<?php echo esc_url($value['upgrade_to_pro_link']); ?>" class="upgrade-to-pro" target="_blank">Upgrade to Pro</a>
 							</div>
 						</div>
 					</div>
@@ -150,41 +150,41 @@ class AdminPageHandler {
     {
         $data = [
 			'advanced-slider'    => [
-                'title'          => __('Advanced Slider for Elementor', 'advanced-testimonial-carousel-for-elementor'),
+                'title'          => __('Advanced Slider for Elementor', 'advanced-slider-for-elementor'),
                 'logo'           => 'slider-logo.png',
                 'is_installed'   => defined('ASE_PLUGIN_VERSION'),
                 'upgrade_to_pro_link' => 'https://wpcreativeidea.com/slider',
                 'settings_url'   => admin_url('admin.php?page=elementor#tab-ase-settings'),
-                'action_text'    => __('Install Slider', 'advanced-testimonial-carousel-for-elementor'),
+                'action_text'    => __('Install Slider', 'advanced-slider-for-elementor'),
 				'route'			 => 'install-ase',
-                'description'    => __('Advanced Slider for Elementor. You can add background image, title, content and button, added Unlimited slider. You can customize background, title, describes and button. Additional options etc.Additional options, Styling title, content, button, background Overlay etc pro features.', 'advanced-testimonial-carousel-for-elementor')
+                'description'    => __('Advanced Slider for Elementor. You can add background image, title, content and button, added Unlimited slider. You can customize background, title, describes and button. Additional options etc.Additional options, Styling title, content, button, background Overlay etc pro features.', 'advanced-slider-for-elementor')
             ],
 
 			'advanced-testimonial' => [
-                'title'          => __('Advanced Testimonial Carousel For Elementor', 'advanced-testimonial-carousel-for-elementor'),
+                'title'          => __('Advanced Testimonial Carousel For Elementor', 'advanced-slider-for-elementor'),
                 'logo'           => 'testimonial-logo.png',
                 'is_installed'   => defined('ATC_PLUGIN_VERSION'),
                 'upgrade_to_pro_link' => 'https://wpcreativeidea.com/testimonial',
                 'settings_url'   => admin_url('admin.php?page=elementor#tab-atc-settings'),
-                'action_text'    => __('Install Testimonial', 'advanced-testimonial-carousel-for-elementor'),
+                'action_text'    => __('Install Testimonial', 'advanced-slider-for-elementor'),
 				'route'			 => 'install-atc',
                 'description'    => __('Advanced Testimonial Carousel for Elementor. You can add image, name, describes, title, added Unlimited slider.
-				You can customize image, name, describes, title. Additional options etc.', 'advanced-testimonial-carousel-for-elementor')
+				You can customize image, name, describes, title. Additional options etc.', 'advanced-slider-for-elementor')
             ],
 
 			'advanced-image-comparison'  => [
-                'title'          => __('Advanced Image Comparison for Elementor', 'advanced-testimonial-carousel-for-elementor'),
+                'title'          => __('Advanced Image Comparison for Elementor', 'advanced-slider-for-elementor'),
                 'logo'           => 'image-comparison-logo.png',
                 'is_installed'   => defined('AIC_PLUGIN_VERSION'),
                 'upgrade_to_pro_link' => 'https://wpcreativeidea.com/image-comparison',
                 'settings_url'   => admin_url('admin.php?page=elementor#tab-aic-settings'),
-                'action_text'    => __('Install Comparison', 'advanced-testimonial-carousel-for-elementor'),
+                'action_text'    => __('Install Comparison', 'advanced-slider-for-elementor'),
 				'route'			 => 'install-aic', 
                 'description'    => __('Advanced Image Comparison is a fully Responsive.
 				You can comparison your image. Comparison before image and after image. You can also image filtering.
 				Customize image container, image radius, image border. Label customizing text color, background color border radius etc.
 				You can set image overlay. Divider width, color. Handle color, background color, border radius etc.
-				Additional options image visibility set, layout, move slider on click, move slider on hover, image overlay.', 'advanced-testimonial-carousel-for-elementor')
+				Additional options image visibility set, layout, move slider on click, move slider on hover, image overlay.', 'advanced-slider-for-elementor')
             ]
 		];
 

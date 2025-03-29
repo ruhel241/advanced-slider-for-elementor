@@ -7,8 +7,8 @@ class SetupController
 
     public function handleAjaxCalls()
     {
-        $route = sanitize_text_field( $_REQUEST['route'] );
-        $nonce = sanitize_text_field( $_REQUEST['nonce'] );
+        $route = sanitize_text_field(isset($_REQUEST['route']) );
+        $nonce = sanitize_text_field( isset($_REQUEST['nonce']) );
 
         if ( !(isset($nonce) && wp_verify_nonce($nonce, 'ase_nonce')) ) {
             return;
@@ -47,17 +47,17 @@ class SetupController
 
         wp_send_json_success([
             'is_installed' => defined('ATC_PLUGIN_VERSION'),
-            'message'      => __('Advanced Testimonial Carousel for Elementor plugin has been installed and activated successfully', 'advanced-testimonial-carousel-for-elementor')
+            'message'      => __('Advanced Testimonial Carousel for Elementor plugin has been installed and activated successfully', 'advanced-slider-for-elementor')
         ]);
     }
 
     private function installAdvancedTestimonial()
     {
-        $plugin_id = 'advanced-testimonial-carousel-for-elementor';
+        $plugin_id = 'advanced-slider-for-elementor';
         $plugin = [
-            'name'      => __('Advanced Testimonial Carousel for Elementor', 'advanced-testimonial-carousel-for-elementor'), 
-			'repo-slug' => 'advanced-testimonial-carousel-for-elementor',
-			'file'      => 'advanced-testimonial-carousel-for-elementor.php',
+            'name'      => __('Advanced Testimonial Carousel for Elementor', 'advanced-slider-for-elementor'), 
+			'repo-slug' => 'advanced-slider-for-elementor',
+			'file'      => 'advanced-slider-for-elementor.php',
         ];
         $this->backgroundInstaller($plugin, $plugin_id);
     }
@@ -72,7 +72,7 @@ class SetupController
 
         wp_send_json_success([
             'is_installed' => defined('AIC_PLUGIN_VERSION'),
-            'message'      => __('Advanced Image Comparison for Elementor has been installed and activated', 'advanced-testimonial-carousel-for-elementor')
+            'message'      => __('Advanced Image Comparison for Elementor has been installed and activated', 'advanced-slider-for-elementor')
         ]);
     }
 
@@ -80,7 +80,7 @@ class SetupController
     {
         $plugin_id = 'advanced-image-comparison-for-elementor';
         $plugin = [
-            'name'      => __('Advanced Image Comparison for Elementor', 'advanced-testimonial-carousel-for-elementor'),
+            'name'      => __('Advanced Image Comparison for Elementor', 'advanced-slider-for-elementor'),
             'repo-slug' => 'advanced-image-comparison-for-elementor',
             'file'      => 'advanced-image-comparison-for-elementor.php',
         ];
@@ -97,7 +97,7 @@ class SetupController
 
         wp_send_json_success([
             'is_installed' => defined('ASE_PLUGIN_VERSION'),
-            'message'      => __('Advanced Slider for Elementor plugin has been installed and activated successfully', 'advanced-testimonial-carousel-for-elementor')
+            'message'      => __('Advanced Slider for Elementor plugin has been installed and activated successfully', 'advanced-slider-for-elementor')
         ]);
     }
 
@@ -105,7 +105,7 @@ class SetupController
     {
         $plugin_id = 'advanced-slider-for-elementor';
         $plugin = [
-            'name'      => __('Advanced Slider for Elementor', 'advanced-testimonial-carousel-for-elementor'),
+            'name'      => __('Advanced Slider for Elementor', 'advanced-slider-for-elementor'),
 			'repo-slug' => 'advanced-slider-for-elementor',
 			'file'      => 'advanced-slider-for-elementor.php',
         ];
